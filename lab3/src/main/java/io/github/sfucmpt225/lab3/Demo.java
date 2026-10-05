@@ -1,10 +1,6 @@
 package io.github.sfucmpt225.lab3;
 /**
- * A short demonstration of both list classes. Once your methods work, run
- *
- *     javac *.java
- *     java Demo
- *
+ * A short demonstration of both list classes. Once your methods work, run it
  * and compare the output with the comments.
  */
 public class Demo {
