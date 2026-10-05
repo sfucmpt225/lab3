@@ -168,17 +168,21 @@ System.out.println(d.toReverseString());  // [1, 3, 2, 1]
 System.out.println(d.isPalindrome());     // false
 ```
 
+## Rubric
+Before submitting, check that both classes compile with the unmodified `Demo.java` and that its output matches the expected output. 
+
+| Component | Points | 
+| --- | --- |
+| Part A: SinglyLinkedList | 45 |
+| Part B: DoublyLinkedList | 45 |
+| Part D: Code quality | 10 | 
+| Total | 100 |  
+
+
 ## Submission
 Zip the project directory along with your answers in a PDF document, and submit the ZIP file to Canvas.
 **Please do not remove any of the build artifacts or the manifest files. Zip the project directory as is.**
 **Your program must compile and run successfully. If your program does not compile or crashes during execution, it will receive a grade of zero.**
-
-## Rubric
-| Criterion | ✓ Yes (1 pt) | ✗ No (0 pts) |
-|-----------|-------------|------------|
-| **Compilation Error 1 Fixed** | Meets requirement | Does not meet requirement |
-| **Total** | **x/10** | |
----
 
 ## Deadline
 Sunday, October 11, 2026, at 11:59 PM PDT
