@@ -2,7 +2,7 @@
 CMPT 225's Lab3
 
 ## Overview
-You will implement two generic list classes from scratch, `SinglyLinkedList<E>` and `DoublyLinkedList<E>`. The lab is graded out of 100 points: 45 points for each class and 10 points for code quality.
+You will implement two generic list classes from scratch, `SinglyLinkedList<E>` and `DoublyLinkedList<E>`. The lab is graded out of 25 points: 10 points for the `SinglyLinkedList<E>` class, 11 points for the `DoublyLinkedList<E>` class, and 4 points for code quality. 
 
 Both classes store elements in `Node` objects and keep three fields: `head` (the first node), `tail` (the last node), and `size`. A singly linked node points only to the next node. A doubly linked node also points back to the previous one, which changes the cost of several operations.
 
@@ -173,10 +173,10 @@ Before submitting, check that both classes compile with the unmodified `Demo.jav
 
 | Component | Points | 
 | --- | --- |
-| Part A: SinglyLinkedList | 45 |
-| Part B: DoublyLinkedList | 45 |
-| Part D: Code quality | 10 | 
-| Total | 100 |  
+| Part A: SinglyLinkedList | 10 |
+| Part B: DoublyLinkedList | 11 |
+| Part D: Code quality | 4 | 
+| Total | 25 |  
 
 
 ## Submission
