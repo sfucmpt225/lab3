@@ -1,36 +1,34 @@
+package io.github.sfucmpt225.lab3;
+
 import java.util.NoSuchElementException;
 
 /**
- * A generic doubly linked list that keeps references to its first node (head)
+ * A generic singly linked list that keeps references to its first node (head)
  * and its last node (tail).
  *
  * <p>Class invariants, verified by {@link #checkInvariants()}:
  * <ul>
  *   <li>{@code size} equals the number of nodes reachable from {@code head}.</li>
  *   <li>If the list is empty, {@code head == null} and {@code tail == null}.</li>
- *   <li>If the list is non-empty, {@code head.prev == null}, {@code tail.next == null},
- *       and {@code tail} is the last node.</li>
- *   <li>For every node {@code x} that has a successor, {@code x.next.prev == x}.</li>
+ *   <li>If the list is non-empty, {@code tail} is the last node and {@code tail.next == null}.</li>
  *   <li>No node stores a {@code null} element.</li>
  * </ul>
  *
  * @param <E> the type of the elements in the list
  */
-public class DoublyLinkedList<E> {
+public class SinglyLinkedList<E> {
 
     // =====================================================================
     // PROVIDED CODE - DO NOT MODIFY. The grader depends on it.
     // =====================================================================
 
-    /** A node in a doubly linked list. */
+    /** A node in a singly linked list. */
     private static class Node<E> {
         E element;
-        Node<E> prev;
         Node<E> next;
 
-        Node(E element, Node<E> prev, Node<E> next) {
+        Node(E element, Node<E> next) {
             this.element = element;
-            this.prev = prev;
             this.next = next;
         }
     }
@@ -40,7 +38,7 @@ public class DoublyLinkedList<E> {
     private int size;       // number of elements in the list
 
     /** Creates an empty list. */
-    public DoublyLinkedList() {
+    public SinglyLinkedList() {
         head = null;
         tail = null;
         size = 0;
@@ -89,28 +87,6 @@ public class DoublyLinkedList<E> {
     }
 
     /**
-     * Returns the elements from tail to head, found by following prev links, formatted like
-     * "[c, b, a]". A wrong result here means some prev link is wrong.
-     */
-    public String toReverseString() {
-        StringBuilder sb = new StringBuilder("[");
-        Node<E> cur = tail;
-        int count = 0;
-        while (cur != null && count <= size) {
-            if (count > 0) {
-                sb.append(", ");
-            }
-            sb.append(cur.element);
-            cur = cur.prev;
-            count++;
-        }
-        if (cur != null) {
-            sb.append(", ...");
-        }
-        return sb.append("]").toString();
-    }
-
-    /**
      * Verifies the class invariants and throws an IllegalStateException that describes the
      * first violation found. The grader calls this after operations; call it in your own tests too.
      */
@@ -127,9 +103,6 @@ public class DoublyLinkedList<E> {
         if (head == null || tail == null) {
             throw new IllegalStateException("size is " + size + " but head or tail is null");
         }
-        if (head.prev != null) {
-            throw new IllegalStateException("head.prev is not null");
-        }
         Node<E> cur = head;
         for (int i = 0; i < size; i++) {
             if (cur == null) {
@@ -138,10 +111,6 @@ public class DoublyLinkedList<E> {
             }
             if (cur.element == null) {
                 throw new IllegalStateException("null element stored at index " + i);
-            }
-            if (cur.next != null && cur.next.prev != cur) {
-                throw new IllegalStateException("broken prev link: the node after index " + i
-                        + " does not point back to it");
             }
             if (i == size - 1 && cur != tail) {
                 throw new IllegalStateException("tail does not refer to the last node");
@@ -169,7 +138,7 @@ public class DoublyLinkedList<E> {
     }
 
     /**
-     * Inserts e at the end of the list. Must run in O(1) time.
+     * Inserts e at the end of the list. Must run in O(1) time (use tail).
      *
      * @throws IllegalArgumentException if e is null
      */
@@ -179,8 +148,7 @@ public class DoublyLinkedList<E> {
 
     /**
      * Inserts e so that it ends up at position index. Elements previously at index and
-     * beyond move back one position. add(size(), e) appends. Must walk from whichever
-     * end of the list is closer to index.
+     * beyond move back one position. add(size(), e) appends.
      *
      * @throws IndexOutOfBoundsException if index < 0 or index > size()
      * @throws IllegalArgumentException  if e is null
@@ -190,8 +158,7 @@ public class DoublyLinkedList<E> {
     }
 
     /**
-     * Returns the element at position index. Must walk from whichever end of the list is
-     * closer to index.
+     * Returns the element at position index.
      *
      * @throws IndexOutOfBoundsException if index < 0 or index >= size()
      */
@@ -217,7 +184,7 @@ public class DoublyLinkedList<E> {
     }
 
     /**
-     * Removes and returns the last element. Must run in O(1) time.
+     * Removes and returns the last element.
      *
      * @throws NoSuchElementException if the list is empty
      */
@@ -226,8 +193,8 @@ public class DoublyLinkedList<E> {
     }
 
     /**
-     * Removes and returns the element at position index. Later elements move forward one
-     * position. Must walk from whichever end of the list is closer to index.
+     * Removes and returns the element at position index. Later elements move forward
+     * one position.
      *
      * @throws IndexOutOfBoundsException if index < 0 or index >= size()
      */
@@ -252,14 +219,5 @@ public class DoublyLinkedList<E> {
      */
     public void reverse() {
         throw new UnsupportedOperationException("TODO: reverse");
-    }
-
-    /**
-     * Returns true if the list reads the same from head to tail as from tail to head
-     * (compared with equals). Empty and one-element lists are palindromes. Must run in
-     * O(n) time with O(1) extra space and must not modify the list.
-     */
-    public boolean isPalindrome() {
-        throw new UnsupportedOperationException("TODO: isPalindrome");
     }
 }

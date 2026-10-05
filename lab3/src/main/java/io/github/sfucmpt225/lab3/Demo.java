@@ -1,3 +1,4 @@
+package io.github.sfucmpt225.lab3;
 /**
  * A short demonstration of both list classes. Once your methods work, run
  *
