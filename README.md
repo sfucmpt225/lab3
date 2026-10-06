@@ -84,6 +84,21 @@ Implement the 10 stubs in `SinglyLinkedList.java` as stated below.
 
 **Note 3**: Every method must keep all invariants true in the edge cases too: an empty list, a one-element list, and changes at the first or last node. Forgetting to update `tail` is the most common bug in this part.
 
+| SinglyLinkedList Stubs                          |   Pass?      |
+| ----------------------------------------------  | ------------ |
+| Stub1:  `void addFirst(E e)`                    |              |
+| Stub2:  `void addLast(E e)`                     |              |
+| Stub3:  `void add(int index, E e)`              |              |                  
+| Stub4:  `E get(int index)`                      |              |
+| Stub5:  `int indexOf(E e)`                      |              |
+| Stub6:  `E removeFirst()`                       |              |
+| Stub7:  `E removeLast()`                        |              |
+| Stub8:  `E remove(int index)`                   |              |
+| Stub9:  `boolean removeFirstOccurrence(E e)`    |              |
+| Stub10: `void reverse()`                        |              |
+
+
+
 ## Part B: DoublyLinkedList (11 points)
 Implement the 11 stubs in `DoublyLinkedList.java`. Methods shared with `SinglyLinkedList.java` keep the same behavior and exceptions; what changes is the time bounds, the `prev` links, and one new method.
 
@@ -119,6 +134,20 @@ Implement the 11 stubs in `DoublyLinkedList.java`. Methods shared with `SinglyLi
 
 ### DoublyLinkedList Stub 11
 `boolean isPalindrome()` returns `true` when the list reads the same forward and backward, such as `[r, a, c, e, c, a, r]` or `[1, 2, 2, 1]`. Empty and one-element lists are palindromes. Move one reference forward from `head` and one backward from `tail`, comparing elements with `equals()`, without modifying or copying the list. The time complexity if O(n) time, and the space complexity is O(1).
+
+| DoublyLinkedList Stubs                          |   Pass?      |
+| ----------------------------------------------  | ------------ |
+| Stub1:  `void addFirst(E e)`                    |              |
+| Stub2:  `void addLast(E e)`                     |              |
+| Stub3:  `void add(int index, E e)`              |              |                  
+| Stub4:  `E get(int index)`                      |              |
+| Stub5:  `int indexOf(E e)`                      |              |
+| Stub6:  `E removeFirst()`                       |              |
+| Stub7:  `E removeLast()`                        |              |
+| Stub8:  `E remove(int index)`                   |              |
+| Stub9:  `boolean removeFirstOccurrence(E e)`    |              |
+| Stub10: `void reverse()`                        |              |
+| Stub11: `boolean isPalindrome()`                |              |
 
 ## Part C: Code quality (4 points)
 The marker will your code and awards up to 10 points on three criteria.
