@@ -204,7 +204,7 @@ Before submitting, check that both classes compile with the unmodified `Demo.jav
 | --- | --- |
 | Part A: SinglyLinkedList | 10 |
 | Part B: DoublyLinkedList | 11 |
-| Part D: Code quality | 4 | 
+| Part c: Code quality | 4 | 
 | Total | 25 |  
 
 
