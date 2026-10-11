@@ -209,7 +209,7 @@ Before submitting, check that both classes compile with the unmodified `Demo.jav
 
 
 ## Submission
-Zip the project directory along with your answers in a PDF document, and submit the ZIP file to Canvas.
+Zip the project directory and submit the ZIP file to Canvas.
 **Please do not remove any of the build artifacts or the manifest files. Zip the project directory as is.**
 **Your program must compile and run successfully. If your program does not compile or crashes during execution, it will receive a grade of zero.**
 
